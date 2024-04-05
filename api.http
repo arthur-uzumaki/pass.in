@@ -1,0 +1,37 @@
+@baseUrl = http://localhost:3333
+
+POST  {{baseUrl}}/events
+Content-Type: application/json
+
+{
+  "title": "Novo evento 2",
+  "details": null,
+  "maximumAttendees": 1
+}
+
+
+###
+
+POST  {{baseUrl}}/events/7e4fbe06-5bb2-4fba-99a1-75f1edcaf6cd/attendees
+Content-Type: application/json
+
+{
+  "name": "Arthur Sousa",
+  "email": "arthur2@gmail.com"
+}
+
+###
+
+GET  {{baseUrl}}/events/7e4fbe06-5bb2-4fba-99a1-75f1edcaf6cd
+
+###
+
+GET {{baseUrl}}/attendees/1/badge
+
+###
+
+GET {{baseUrl}}/attendees/3/check-in
+
+###
+
+GET {{baseUrl}}/events/7e4fbe06-5bb2-4fba-99a1-75f1edcaf6cd/attendees?query=Arthur Sousa
